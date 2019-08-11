@@ -7,7 +7,7 @@ const Card = (props) => {
     <article className='card' data-id={id}>
       <h2>{title}</h2>
       <p>{description}</p>
-      <button onClick={() => deleteIdea(id)}>🗑</button>
+      <button onClick={() => deleteIdea(id)}>Delete</button>
     </article>
   )
 }

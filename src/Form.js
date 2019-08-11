@@ -43,13 +43,21 @@ export default class Form extends React.Component {
   render() {
     return (
       <form>
+        <label>
+          Title
+        </label>
         <input
+        className='title-input'
         type='text'
         placeholder='Title'
         name='title'
         value={this.state.title}
         onChange={(e) => this.handleChange(e)}
         />
+        
+        <label>
+          Description
+        </label>
         <input
         type='text'
         placeholder='Description'
@@ -57,6 +65,7 @@ export default class Form extends React.Component {
         value={this.state.description}
         onChange={(e) => this.handleChange(e)}
         />
+        
         <button onClick={(e) => this.submitIdea(e)}>SUBMIT</button>
       </form>
     )

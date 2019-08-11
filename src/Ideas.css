@@ -8,4 +8,6 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 20px;
+  background: #EAEAF4;
+  height: 90vh;
 }
