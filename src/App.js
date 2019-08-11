@@ -1,5 +1,7 @@
 import React from 'react';
 import Ideas from './Ideas'
+import Form from './Form'
+import './App.css'
 
 export default class App extends React.Component {
   constructor(props) {
@@ -12,11 +14,21 @@ export default class App extends React.Component {
         { id: 3, title: 'Learn a martial art', description: 'To exact vengeance upon my enemies' },
       ]
     }
+    this.addIdea = this.addIdea.bind(this)
   }
+
+  addIdea(newIdea) {
+    this.setState({
+      ideas: [...this.state.ideas, newIdea]
+    })
+    console.log(this.state)
+  }
+
   render() {
     return (
       <main>
         <h1>Idea Box</h1>
+        <Form addIdea={this.addIdea} />
         <Ideas ideas={this.state.ideas} />
       </main>
     )
