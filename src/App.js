@@ -15,6 +15,7 @@ export default class App extends React.Component {
       ]
     }
     this.addIdea = this.addIdea.bind(this)
+    this.deleteIdea = this.deleteIdea.bind(this)
   }
 
   addIdea(newIdea) {
@@ -24,12 +25,20 @@ export default class App extends React.Component {
     console.log(this.state)
   }
 
+  deleteIdea(id) {
+    const filteredIdeas = this.state.ideas.filter((idea) => idea.id !== id)
+
+    this.setState({
+      ideas: filteredIdeas
+    })
+  }
+
   render() {
     return (
       <main>
         <h1>Idea Box</h1>
         <Form addIdea={this.addIdea} />
-        <Ideas ideas={this.state.ideas} />
+        <Ideas ideas={this.state.ideas} deleteIdea={this.deleteIdea} />
       </main>
     )
   }
