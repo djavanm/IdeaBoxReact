@@ -1,4 +1,5 @@
 import React from 'react';
+import Ideas from './Ideas'
 
 export default class App extends React.Component {
   constructor(props) {
@@ -16,6 +17,7 @@ export default class App extends React.Component {
     return (
       <main>
         <h1>Idea Box</h1>
+        <Ideas ideas={this.state.ideas} />
       </main>
     )
   }
